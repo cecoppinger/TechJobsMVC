@@ -1,0 +1,18 @@
+﻿@foreach (Dictionary<string, string> job in ViewBag.jobs)
+{
+    <table class="job-listing">
+        @foreach (KeyValuePair<string, string> field in job)
+        {
+            <tr>
+                @{
+                    string capitalized = char.ToUpper(field.Key[0]) + field.Key.Substring(1);
+                }
+                <td>@capitalized</td>
+                <td>@field.Value</td>
+            </tr>
+        }
+    </table>
+}
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
